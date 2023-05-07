@@ -2,9 +2,10 @@ import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConne
 
 const config: PostgresConnectionOptions = {
   type: 'postgres',
-  database: 'todoapp',
-  username: 'mediumclone',
-  password: '5228',
+  database: process.env.DB_NAME,
+  username: process.env.DB_USER,
+  host: process.env.DB_HOSTNAME,
+  password: process.env.DB_PASSWORD,
   port: 5432,
   entities: [__dirname + '/**/*.entity{.ts,.js}'],
   synchronize: true,
